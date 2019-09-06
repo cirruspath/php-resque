@@ -206,7 +206,7 @@ class Resque_Redis
 
 		// Extract any 'user' and 'pass' values
 		$user = isset($parts['user']) ? $parts['user'] : false;
-		$pass = isset($parts['pass']) ? $parts['pass'] : false;
+		$pass = isset($parts['pass']) ? urldecode($parts['pass']) : false;
 
 		// Convert the query string into an associative array
 		$options = array();
