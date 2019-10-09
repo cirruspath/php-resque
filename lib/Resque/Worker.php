@@ -153,6 +153,7 @@ class Resque_Worker
 		$this->startup();
 
 		while(true) {
+			Resque_Event::trigger('ping');
 			if($this->shutdown) {
 				break;
 			}
